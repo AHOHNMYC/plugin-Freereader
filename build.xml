@@ -37,12 +37,14 @@
 		<arg value="--abbrev=7" />
 		<arg value="--dirty" />
 	</exec>
+
 	<condition property="git.revision" value="${git.describe}" else="@unknown@">
 		<and>
 			<equals arg1="${git.result}" arg2="0" />
 			<isset property="git.describe" />
 		</and>
 	</condition>
+
 	<target name="setver" if="version.present">
 		<!-- Update the Version.java file in ${build}-->
 		<copy file="${src}/${version.src}" tofile="${build.classes}/${version.src}" overwrite="true" />
