@@ -23,10 +23,10 @@ jobs:
         mkdir -p ../fred/dist lib
         wget https://github.com/hyphanet/fred/releases/download/build01497/freenet.jar -qO ../fred/dist/freenet.jar
         DEP_LINK=https://github.com/AHOHNMYC/plugin-Freereader/releases/download/build_dep
-        wget $DEP_LINK/jdom.jar -qO lib/
-        wget $DEP_LINK/jarjar-1.0.jar -qO lib/
-        wget $DEP_LINK/jaxen-1.1.1.jar -qO lib/
-        wget $DEP_LINK/rome-1.0.jar -qO lib/
+        wget $DEP_LINK/jdom.jar -qO lib/jdom.jar
+        wget $DEP_LINK/jarjar-1.0.jar -qO lib/jarjar-1.0.jar
+        wget $DEP_LINK/jaxen-1.1.1.jar -qO lib/jaxen-1.1.1.jar
+        wget $DEP_LINK/rome-1.0.jar -qO lib/rome-1.0.jar
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
     - name: Upload XMLLibrarian
